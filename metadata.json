@@ -2,5 +2,7 @@
   "name": "UR RCM CONSULTANCY LLC",
   "description": "Professional Medical Billing & Revenue Cycle Management (RCM) solutions helping healthcare providers streamline billing, improve collections, and reduce administrative burden.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
