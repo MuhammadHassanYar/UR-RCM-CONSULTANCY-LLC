@@ -99,7 +99,7 @@ export function Navbar() {
             : 'border-slate-100 text-slate-500'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-[#00A859]" />
@@ -128,8 +128,8 @@ export function Navbar() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full flex items-center justify-between min-w-0">
           {/* Company Logo */}
           <div className="flex items-center">
             <Logo theme={isDarkNav ? 'dark' : 'light'} />
@@ -177,12 +177,12 @@ export function Navbar() {
                     {/* Services Mega Dropdown */}
                     {isServicesDropdownOpen && (
                       <div
-                        className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[740px] animate-in fade-in zoom-in-95 duration-150"
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-full max-w-3xl animate-in fade-in zoom-in-95 duration-150"
                         role="menu"
                         aria-orientation="vertical"
                         aria-labelledby="services-menu-button"
                       >
-                        <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 text-slate-900">
+                        <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 text-slate-900 w-full">
                           <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
                             <div>
                               <div className="text-[10px] uppercase tracking-widest font-bold text-[#0066CC] mb-0.5">
@@ -281,14 +281,14 @@ export function Navbar() {
           </div>
 
           {/* Mobile Actions: Quick Consult Button & Hamburger Menu Icon */}
-          <div className="flex xl:hidden items-center gap-2 relative z-50">
+          <div className="flex xl:hidden items-center gap-2 relative z-50 shrink-0">
             <button
               type="button"
               onClick={() => {
                 setIsOpen(false);
                 openConsultation();
               }}
-              className="px-3.5 py-2 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-bold shadow-xs transition-colors cursor-pointer"
+              className="px-3 py-1.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-bold shadow-xs transition-colors cursor-pointer shrink-0 whitespace-nowrap"
             >
               Consult
             </button>
@@ -298,7 +298,7 @@ export function Navbar() {
               type="button"
               id="mobile-menu-toggle-btn"
               onClick={() => setIsOpen((prev) => !prev)}
-              className={`min-h-[44px] min-w-[44px] p-2.5 rounded-xl flex items-center justify-center transition-all cursor-pointer ${
+              className={`h-10 w-10 sm:h-11 sm:w-11 p-2 rounded-xl flex items-center justify-center transition-all cursor-pointer shrink-0 ${
                 isDarkNav
                   ? 'text-white bg-white/10 hover:bg-white/20 border border-white/20 shadow-xs'
                   : 'text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-200'
@@ -307,9 +307,9 @@ export function Navbar() {
               aria-expanded={isOpen}
             >
               {isOpen ? (
-                <X className="w-6 h-6 text-[#0066CC]" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6 text-[#0066CC]" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               )}
             </button>
           </div>
@@ -445,10 +445,12 @@ export function Navbar() {
               <span>5900 Balcones Drive Ste 11101, Austin, TX 78731</span>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="flex items-center gap-1.5 font-semibold text-slate-200 hover:text-[#0066CC] transition-colors"
+                className={`flex items-center gap-1.5 font-semibold transition-colors ${
+                  isDarkNav ? 'text-slate-200 hover:text-white' : 'text-slate-800 hover:text-[#0066CC]'
+                }`}
               >
                 <Phone className="w-3.5 h-3.5 text-[#0066CC]" />
                 <span>{COMPANY_INFO.phone}</span>
@@ -456,10 +458,12 @@ export function Navbar() {
 
               <a
                 href={`mailto:${COMPANY_INFO.email}`}
-                className="flex items-center gap-1.5 hover:underline text-slate-400 hover:text-white transition-colors"
+                className={`flex items-center gap-1.5 hover:underline transition-colors ${
+                  isDarkNav ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-[#0066CC]'
+                }`}
               >
                 <Mail className="w-3.5 h-3.5 text-[#0066CC]" />
-                <span>{COMPANY_INFO.email}</span>
+                <span className="break-all">{COMPANY_INFO.email}</span>
               </a>
             </div>
 

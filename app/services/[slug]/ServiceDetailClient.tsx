@@ -83,18 +83,19 @@ export function ServiceDetailClient({ service, otherServices }: ServiceDetailCli
                 {service.shortDesc}
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   type="button"
                   onClick={() => openConsultation(service.slug)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all text-center"
+                  aria-label={`Schedule a Consultation for ${service.title}`}
                 >
-                  <Calendar className="w-4 h-4" />
-                  Schedule a Consultation for {service.title}
+                  <Calendar className="w-4 h-4 shrink-0" />
+                  <span>Schedule a Consultation</span>
                 </button>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold text-sm transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold text-sm transition-colors text-center"
                 >
                   Contact Our Team
                 </Link>
@@ -330,13 +331,13 @@ export function ServiceDetailClient({ service, otherServices }: ServiceDetailCli
             <button
               type="button"
               onClick={() => openConsultation(service.slug)}
-              className="px-6 py-3.5 rounded-xl bg-white text-[#0066CC] font-bold text-sm shadow-md hover:bg-blue-50 transition-colors"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-[#0066CC] font-bold text-sm shadow-md hover:bg-blue-50 transition-colors text-center"
             >
               Schedule a Consultation
             </button>
             <Link
               href="/services"
-              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 transition-colors"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 transition-colors text-center"
             >
               Explore Other Services
             </Link>

@@ -64,7 +64,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
             {/* Left Column: Official Austin Information (5 cols) */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-8 min-w-0 max-w-full">
               
               <div className="space-y-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A859]">Direct Details</span>
@@ -79,11 +79,11 @@ export default function ContactPage() {
               {/* Cards */}
               <div className="space-y-4">
                 {/* Address */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4 min-w-0 max-w-full">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066CC] flex items-center justify-center shrink-0 mt-0.5">
                     <MapPin className="w-5 h-5 text-[#00A859]" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 min-w-0 flex-1">
                     <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Headquarters Address</div>
                     <div className="text-sm font-bold text-slate-900">{COMPANY_INFO.legalName}</div>
                     <div className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -105,11 +105,11 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4 min-w-0 max-w-full">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066CC] flex items-center justify-center shrink-0 mt-0.5">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 min-w-0 flex-1">
                     <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Direct Phone</div>
                     <a
                       href={`tel:${COMPANY_INFO.phone}`}
@@ -122,15 +122,15 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4 min-w-0 max-w-full">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066CC] flex items-center justify-center shrink-0 mt-0.5">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 min-w-0 flex-1">
                     <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Electronic Mail</div>
                     <a
                       href={`mailto:${COMPANY_INFO.email}`}
-                      className="text-sm sm:text-base font-bold text-slate-900 hover:text-[#0066CC] transition-colors block"
+                      className="text-sm sm:text-base font-bold text-slate-900 hover:text-[#0066CC] transition-colors block break-all"
                     >
                       {COMPANY_INFO.email}
                     </a>
@@ -139,11 +139,11 @@ export default function ContactPage() {
                 </div>
 
                 {/* Hours */}
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4 min-w-0 max-w-full">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066CC] flex items-center justify-center shrink-0 mt-0.5">
                     <Clock className="w-5 h-5" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 min-w-0 flex-1">
                     <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Operational Hours</div>
                     <div className="text-xs sm:text-sm font-bold text-slate-900">{COMPANY_INFO.hours}</div>
                     <div className="text-xs text-slate-500">Central Standard Time (Austin, TX)</div>
@@ -151,9 +151,9 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-200/80 text-xs text-slate-700 flex items-start gap-2.5">
+              <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-200/80 text-xs text-slate-700 flex items-start gap-2.5 min-w-0 max-w-full">
                 <Shield className="w-4 h-4 text-[#0066CC] shrink-0 mt-0.5" />
-                <span>
+                <span className="min-w-0 flex-1">
                   <strong>Confidentiality Notice:</strong> All consultations and preliminary practice reviews are conducted under strict confidentiality and privacy safeguards.
                 </span>
               </div>
@@ -161,7 +161,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Interactive Consultation & Contact Form (7 cols) */}
-            <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl">
+            <div className="lg:col-span-7 bg-white p-5 sm:p-8 md:p-10 rounded-3xl border border-slate-200 shadow-xl min-w-0 max-w-full">
               
               {submitted ? (
                 <div className="text-center py-12 space-y-4 animate-in zoom-in-95 duration-300">

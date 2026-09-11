@@ -50,23 +50,23 @@ export function SecurityComplianceSection() {
   return (
     <section
       id="compliance-section"
-      className="py-20 lg:py-28 bg-[#0a0f1d] text-white border-y border-slate-800 relative overflow-hidden"
+      className="w-full py-16 sm:py-20 lg:py-28 bg-[#0a0f1d] text-white border-y border-slate-800 relative overflow-hidden"
     >
       {/* Background Tech Grid & Ambient Glow */}
       <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 lg:w-[32rem] h-72 sm:h-96 lg:h-[32rem] max-w-full bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[#00A859] text-xs font-bold uppercase tracking-wider">
             <Lock className="w-3.5 h-3.5 text-[#00A859]" />
             <span>CONFIDENTIALITY & ARCHITECTURE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-snug break-words">
             Built With Privacy and{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
+            <span className="text-[#00A859]">
               Security in Mind.
             </span>
           </h2>
@@ -76,7 +76,7 @@ export function SecurityComplianceSection() {
         </div>
 
         {/* Central Connected Security Hub Diagram */}
-        <div className="relative max-w-4xl mx-auto bg-slate-900/80 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl overflow-hidden mb-12">
+        <div className="relative w-full max-w-4xl mx-auto bg-slate-900/80 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-12 shadow-2xl overflow-hidden mb-12 min-w-0 max-w-full">
           
           {/* Connecting SVG Network Lines */}
           <svg
@@ -91,17 +91,17 @@ export function SecurityComplianceSection() {
           </svg>
 
           {/* Center Hub: Shield & Security Symbol */}
-          <div className="relative z-10 flex flex-col items-center justify-center my-6">
+          <div className="relative z-10 flex flex-col items-center justify-center my-4 sm:my-6">
             <div className="relative flex items-center justify-center">
-              <span className="animate-ping absolute inline-flex h-24 w-24 rounded-full bg-[#00A859] opacity-20" />
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-[#0066CC] to-[#00A859] p-0.5 shadow-xl shadow-emerald-500/20 flex items-center justify-center">
+              <span className="animate-ping absolute inline-flex h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-[#00A859] opacity-20" />
+              <div className="relative w-16 h-16 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-[#0066CC] to-[#00A859] p-0.5 shadow-xl shadow-emerald-500/20 flex items-center justify-center">
                 <div className="w-full h-full bg-slate-950 rounded-[22px] flex items-center justify-center">
-                  <ShieldCheck className="w-10 h-10 text-[#00A859]" />
+                  <ShieldCheck className="w-8 h-8 sm:w-10 sm:h-10 text-[#00A859]" />
                 </div>
               </div>
             </div>
             <div className="mt-4 text-center">
-              <span className="font-mono text-xs font-bold text-white tracking-wider uppercase px-3 py-1 rounded-full bg-slate-800 border border-slate-700">
+              <span className="font-mono text-xs font-bold text-white tracking-wider uppercase px-3 py-1 rounded-full bg-slate-800 border border-slate-700 inline-block">
                 CENTRAL SAFEGUARD MATRIX
               </span>
               <p className="text-[11px] text-slate-400 mt-1">HIPAA / BAA Enforced Protocols</p>
@@ -109,18 +109,18 @@ export function SecurityComplianceSection() {
           </div>
 
           {/* 5 Connected Perimeter Nodes */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4 sm:pt-6 relative z-10">
             {securityNodes.map((node) => {
               const Icon = node.icon;
               return (
                 <div
                   key={node.title}
-                  className="p-4 rounded-2xl bg-slate-950/90 border border-slate-800/90 hover:border-[#00A859]/50 transition-all flex items-start gap-3.5 group shadow-xs"
+                  className="p-4 rounded-2xl bg-slate-950/90 border border-slate-800/90 hover:border-[#00A859]/50 transition-all flex items-start gap-3.5 group shadow-xs min-w-0 max-w-full"
                 >
                   <div className="w-9 h-9 rounded-xl bg-slate-900 text-[#00A859] group-hover:bg-[#00A859] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
                       {node.title}
                     </h3>
@@ -136,20 +136,20 @@ export function SecurityComplianceSection() {
         </div>
 
         {/* 4 Compliance Credentials Pillars */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center">
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 min-w-0 max-w-full">
             <div className="text-sm font-bold text-white">HIPAA Standard</div>
             <div className="text-xs text-slate-400 mt-0.5">Privacy & Security Rule Alignment</div>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 min-w-0 max-w-full">
             <div className="text-sm font-bold text-white">HITECH Safeguards</div>
             <div className="text-xs text-slate-400 mt-0.5">Encrypted Transmission Channels</div>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 min-w-0 max-w-full">
             <div className="text-sm font-bold text-white">BAA Execution</div>
             <div className="text-xs text-slate-400 mt-0.5">Business Associate Agreements</div>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 min-w-0 max-w-full">
             <div className="text-sm font-bold text-white">Role-Based Access</div>
             <div className="text-xs text-slate-400 mt-0.5">Strict Need-to-Know Authorization</div>
           </div>

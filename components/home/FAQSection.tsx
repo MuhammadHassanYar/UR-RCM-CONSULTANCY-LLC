@@ -13,15 +13,15 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-white" id="faq">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-16 lg:py-24 bg-white relative overflow-hidden" id="faq">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center space-y-3 mb-12">
+        <div className="text-center space-y-3 mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0066CC] text-xs font-bold uppercase tracking-wider border border-blue-200">
             Answers & Clarity
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug break-words">
             Frequently Asked Questions
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -42,10 +42,10 @@ export function FAQSection() {
                 <button
                   type="button"
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-50/70 transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-slate-50/70 transition-colors gap-3"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm sm:text-base font-bold text-slate-900 pr-4">
+                  <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug min-w-0 flex-1">
                     {faq.question}
                   </span>
                   <div
@@ -60,7 +60,7 @@ export function FAQSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 animate-in fade-in duration-200">
+                  <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 animate-in fade-in duration-200">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -70,12 +70,13 @@ export function FAQSection() {
         </div>
 
         {/* Bottom Link */}
-        <div className="mt-10 text-center">
+        <div className="mt-8 sm:mt-10 text-center">
           <Link
             href="/faq"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0066CC] hover:underline"
+            className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#0066CC] hover:underline text-center"
           >
-            Have more questions? Browse our complete FAQ knowledge base <ArrowRight className="w-4 h-4" />
+            <span>Have more questions? Browse our complete FAQ knowledge base</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </Link>
         </div>
 

@@ -45,18 +45,18 @@ export function ProcessTimelineSection() {
   ];
 
   return (
-    <section id="process-timeline-section" className="py-20 lg:py-28 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden">
+    <section id="process-timeline-section" className="w-full py-16 sm:py-20 lg:py-28 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden">
       {/* Background Subtle Lines */}
       <div className="absolute inset-0 bg-tech-grid-light opacity-40 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0066CC] text-xs font-bold uppercase tracking-wider">
             Structured Partnership Framework
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug break-words">
             How We Onboard and Optimize Your Revenue Cycle
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -132,20 +132,20 @@ export function ProcessTimelineSection() {
         </div>
 
         {/* MOBILE VERTICAL TIMELINE */}
-        <div className="lg:hidden space-y-4 mb-10">
+        <div className="lg:hidden space-y-4 mb-8 sm:mb-10">
           {steps.map((step) => {
             const Icon = step.icon;
 
             return (
               <div
                 key={step.num}
-                className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs relative"
+                className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-xs relative"
               >
-                <div className="flex items-start gap-4 mb-3">
+                <div className="flex items-start gap-3.5 sm:gap-4 mb-3">
                   <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0066CC] flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[10px] font-mono font-bold text-[#0066CC] bg-blue-50 px-2 py-0.5 rounded-md">
                       PHASE {step.num}
                     </span>
@@ -181,10 +181,11 @@ export function ProcessTimelineSection() {
             type="button"
             id="timeline-start-step1-btn"
             onClick={() => openConsultation()}
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md shadow-blue-500/25 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md shadow-blue-500/25 transition-all text-center max-w-full"
           >
-            Start with Phase 01: Request Discovery Consultation
-            <ArrowRight className="w-4 h-4" />
+            <span className="leading-snug hidden sm:inline">Start with Phase 01: Request Discovery Consultation</span>
+            <span className="leading-snug sm:hidden">Request Discovery Consultation</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
 

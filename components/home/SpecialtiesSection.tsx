@@ -40,8 +40,8 @@ export function SpecialtiesSection() {
   const { openConsultation } = useConsultation();
 
   return (
-    <section className="py-16 lg:py-20 bg-[#f8fafc] border-b border-slate-200" id="specialties">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-16 lg:py-20 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden" id="specialties">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
@@ -49,7 +49,7 @@ export function SpecialtiesSection() {
             <div className="text-[10px] uppercase tracking-widest font-bold text-[#0066CC] mb-2">
               Clinical Coverage Matrix
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-snug break-words">
               Supporting Healthcare Organizations Across Specialties
             </h2>
           </div>
@@ -66,11 +66,11 @@ export function SpecialtiesSection() {
             return (
               <div
                 key={spec.id}
-                className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-[#0066CC]/40 transition-all duration-200 flex flex-col justify-between group"
+                className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-[#0066CC]/40 transition-all duration-200 flex flex-col justify-between group min-w-0 max-w-full"
               >
-                <div>
+                <div className="min-w-0">
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#0066CC] group-hover:bg-[#0066CC] group-hover:text-white flex items-center justify-center transition-colors shadow-xs">
+                    <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#0066CC] group-hover:bg-[#0066CC] group-hover:text-white flex items-center justify-center transition-colors shadow-xs shrink-0">
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
@@ -103,8 +103,8 @@ export function SpecialtiesSection() {
         </div>
 
         {/* CTA Bento Bar */}
-        <div className="mt-10 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
-          <div className="space-y-1 text-center sm:text-left">
+        <div className="mt-10 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs min-w-0 max-w-full">
+          <div className="space-y-1 text-center sm:text-left min-w-0 flex-1">
             <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400">
               Custom Clinical Scope
             </div>
@@ -115,15 +115,15 @@ export function SpecialtiesSection() {
               We frequently design custom billing protocols for sub-specialties, ambulatory surgical centers, and multi-disciplinary clinics.
             </p>
           </div>
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="w-full sm:w-auto flex items-center justify-center shrink-0">
             <button
               type="button"
               id="specialties-discuss-btn"
               onClick={() => openConsultation()}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-xs sm:text-sm shadow-xs transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-xs sm:text-sm shadow-xs transition-colors text-center shrink-0"
             >
-              <MessageSquare className="w-4 h-4" />
-              Discuss Your Practice With Us
+              <MessageSquare className="w-4 h-4 shrink-0" />
+              <span>Discuss Your Practice With Us</span>
             </button>
           </div>
         </div>

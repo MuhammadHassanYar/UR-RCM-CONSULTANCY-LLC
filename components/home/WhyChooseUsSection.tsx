@@ -2,132 +2,184 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
+import {
+  ArrowRight,
+  CheckCircle2,
+  XCircle,
+  Award,
+  ShieldCheck,
+  Zap,
+  Users,
+  Eye,
+  TrendingUp,
+} from 'lucide-react';
 import { useConsultation } from '../ConsultationContext';
 
 export function WhyChooseUsSection() {
   const { openConsultation } = useConsultation();
 
-  const principles = [
+  const comparisonPoints = [
     {
-      num: '01',
-      name: 'Accuracy',
-      desc: 'Clinical coding precision, verified modifier usage, and exhaustive pre-submission claim scrubbing to maximize first-pass resolution.',
+      feature: 'First-Pass Clean Claim Yield',
+      traditional: '75% – 82% (Frequent rework)',
+      urRcm: '98.4% (Multi-level daily scrubbing)',
     },
     {
-      num: '02',
-      name: 'Transparency',
-      desc: 'Zero obscurity in practice performance. Complete monthly visibility into claims submitted, cash posted, unbilled encounters, and aging buckets.',
+      feature: 'Denial Management & Appeals',
+      traditional: 'Passive; up to 60% of denials unworked',
+      urRcm: 'Forensic CARC analysis & timely clinical appeals',
     },
     {
-      num: '03',
-      name: 'Efficiency',
-      desc: 'Automated 837P transmission, rapid 835 electronic remittance posting, and immediate denial triage that shorten payment turnaround.',
+      feature: 'EHR & Practice Management',
+      traditional: 'Forces provider to buy proprietary software',
+      urRcm: 'Works directly inside your existing EHR/PM',
     },
     {
-      num: '04',
-      name: 'Technology',
-      desc: 'Seamless compatibility with modern EHR/PM systems, electronic clearinghouses, and continuous workflow telemetry.',
+      feature: 'Staff Turnover & Overhead',
+      traditional: 'Constant hiring, training, and billing sick leave',
+      urRcm: 'Dedicated team of certified AAPC/AHIMA specialists',
     },
     {
-      num: '05',
-      name: 'Partnership',
-      desc: 'A dedicated, responsive team of revenue cycle professionals who treat your clinical reputation and financial stability as our own.',
+      feature: 'Reporting & Financial Transparency',
+      traditional: 'Generic quarterly PDFs with opaque numbers',
+      urRcm: 'Transparent monthly reviews & real-time dashboard',
+    },
+  ];
+
+  const pillars = [
+    {
+      title: 'Dedicated Specialty Leadership',
+      desc: 'You work directly with an assigned RCM account manager who understands your exact clinical specialty and local payer contracts.',
+      icon: Users,
+    },
+    {
+      title: 'Forensic Denial Root-Cause Eradication',
+      desc: 'We do not just rebill; we diagnose upstream front-desk and documentation issues to eliminate recurring denial patterns permanently.',
+      icon: Zap,
+    },
+    {
+      title: 'Zero Obscurity Financial Policy',
+      desc: 'Real-time visibility into claims queued, payments reconciled, and aging buckets directly inside your existing EHR records.',
+      icon: Eye,
+    },
+    {
+      title: 'Aligned Performance Model',
+      desc: 'Our success is tied directly to your practice’s realized collections. We only grow when your cash flow expands.',
+      icon: TrendingUp,
     },
   ];
 
   return (
-    <section id="why-choose-us-section" className="py-20 lg:py-28 bg-white border-b border-slate-200 relative overflow-hidden">
-      {/* Subtle tech background */}
-      <div className="absolute inset-0 bg-tech-grid-light opacity-30 pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="why-choose-us-section"
+      className="w-full py-16 sm:py-20 lg:py-28 bg-white border-b border-slate-200 relative overflow-hidden"
+    >
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Editorial 2-Column Split: Statement on Left, Principles on Right */}
-        <div className="grid grid-cols-12 gap-10 lg:gap-16 items-start">
-          
-          {/* LEFT SIDE: Large Statement */}
-          <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-28 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#00A859] text-xs font-bold tracking-wider uppercase">
-              <Award className="w-3.5 h-3.5 text-[#00A859]" />
-              <span>CORE PHILOSOPHY</span>
-            </div>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#00A859] text-xs font-bold tracking-wider uppercase">
+            <Award className="w-3.5 h-3.5 text-[#00A859]" />
+            <span>The UR RCM Advantage</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight break-words">
+            Why Healthcare Providers Choose{' '}
+            <span className="text-[#0066CC]">UR RCM.</span>
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Comparing the traditional fragmented billing approach with our dedicated, certified revenue cycle partnership.
+          </p>
+        </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.12]">
-              Built Around{' '}
-              <span className="text-[#0066CC]">Your Practice.</span>
-            </h2>
-
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Healthcare Revenue Cycle Management is not an off-the-shelf software download. It is an exacting operational discipline that balances medical necessity, shifting payer guidelines, and steady cash flow.
-            </p>
-
-            <p className="text-sm text-slate-500 leading-relaxed">
-              We structure our services to adapt to your EHR, your clinical specialty, and your practice goals—providing executive confidence through every billing cycle.
-            </p>
-
-            {/* Quality Seal */}
-            <div className="p-4 rounded-2xl bg-[#f8fafc] border border-slate-200 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
-                <ShieldCheck className="w-4 h-4 text-[#00A859]" />
-                Austin, Texas Headquarters
-              </div>
-              <p className="text-xs text-slate-500">
-                Direct accountability with U.S.-based client service leadership and certified medical billing directors.
+        {/* 1. Comparison Matrix Card */}
+        <div className="w-full rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm overflow-hidden mb-14">
+          <div className="p-4 sm:p-6 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 className="text-base sm:text-lg font-bold">
+                Operational Comparison
+              </h3>
+              <p className="text-xs text-slate-400">
+                How our embedded partnership protects your practice bottom line.
               </p>
             </div>
-
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                type="button"
-                id="why-choose-us-consult-btn"
-                onClick={() => openConsultation()}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all"
-              >
-                Schedule Consultation
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <Link
-                href="/why-choose-us"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-800 font-bold text-sm transition-colors"
-              >
-                Learn More
-              </Link>
-            </div>
+            <span className="px-3 py-1 rounded-full bg-[#00A859] text-white text-[11px] font-bold tracking-wider uppercase shrink-0 text-center">
+              AAPC / AHIMA Standards
+            </span>
           </div>
 
-          {/* RIGHT SIDE: Five Principles with Large Numbers */}
-          <div className="col-span-12 lg:col-span-7 space-y-4">
-            {principles.map((p) => (
-              <div
-                key={p.num}
-                className="group relative p-6 sm:p-7 rounded-3xl bg-[#fbfcfd] hover:bg-white border border-slate-200/90 hover:border-[#0066CC]/50 shadow-xs hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex items-start gap-5 sm:gap-6">
-                  {/* Large Number */}
-                  <div className="text-3xl sm:text-4xl font-black font-mono text-slate-300 group-hover:text-[#0066CC] transition-colors shrink-0 leading-none mt-1">
-                    {p.num}
+          <div className="divide-y divide-slate-200 overflow-x-auto">
+            <div className="min-w-[580px]">
+              {/* Table Header */}
+              <div className="grid grid-cols-12 bg-slate-100/90 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+                <div className="col-span-4">Metric / Workflow</div>
+                <div className="col-span-4 text-slate-600">Traditional In-House / Generic</div>
+                <div className="col-span-4 text-[#0066CC]">UR RCM Partnership</div>
+              </div>
+
+              {/* Rows */}
+              {comparisonPoints.map((row, idx) => (
+                <div
+                  key={row.feature}
+                  className={`grid grid-cols-12 px-5 py-4 text-xs sm:text-sm items-center gap-2 ${
+                    idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'
+                  }`}
+                >
+                  <div className="col-span-4 font-bold text-slate-900 pr-2">
+                    {row.feature}
                   </div>
-
-                  {/* Content */}
-                  <div className="space-y-2 flex-1">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0066CC] transition-colors">
-                        {p.name}
-                      </h3>
-                      <span className="w-2 h-2 rounded-full bg-slate-200 group-hover:bg-[#00A859] transition-colors" />
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      {p.desc}
-                    </p>
+                  <div className="col-span-4 text-slate-500 flex items-start gap-1.5 pr-2">
+                    <XCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                    <span>{row.traditional}</span>
+                  </div>
+                  <div className="col-span-4 text-slate-900 font-semibold flex items-start gap-1.5 bg-blue-50/50 p-2 rounded-xl">
+                    <CheckCircle2 className="w-4 h-4 text-[#00A859] shrink-0 mt-0.5" />
+                    <span className="text-[#0066CC]">{row.urRcm}</span>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+        </div>
 
+        {/* 2. Four Core Value Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pillars.map((pillar) => {
+            const Icon = pillar.icon;
+            return (
+              <div
+                key={pillar.title}
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-400 transition-all space-y-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066CC] flex items-center justify-center">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-slate-900 leading-snug">
+                  {pillar.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Section Call to Action */}
+        <div className="mt-12 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button
+            type="button"
+            onClick={() => openConsultation()}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all text-center"
+          >
+            <span>Discuss Your Practice Needs</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+          <Link
+            href="/why-choose-us"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm transition-colors text-center"
+          >
+            <span>Read Detailed Case Profiles</span>
+          </Link>
         </div>
 
       </div>

@@ -117,13 +117,13 @@ export default function FAQPage() {
                   <button
                     type="button"
                     onClick={() => toggleIndex(index)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-slate-50/70 transition-colors"
+                    className="w-full p-4 sm:p-6 text-left flex items-center justify-between hover:bg-slate-50/70 transition-colors gap-3"
                   >
-                    <div className="pr-4 space-y-1">
+                    <div className="space-y-1 min-w-0 flex-1">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#00A859] block">
                         {faq.category}
                       </span>
-                      <h2 className="text-base sm:text-lg font-bold text-slate-900">
+                      <h2 className="text-sm sm:text-lg font-bold text-slate-900 leading-snug">
                         {faq.question}
                       </h2>
                     </div>
@@ -155,7 +155,7 @@ export default function FAQPage() {
           </div>
 
           {/* Bottom Card */}
-          <div className="mt-14 bg-slate-900 text-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-14 bg-slate-900 text-white rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-1 text-center md:text-left">
               <h3 className="text-xl font-bold text-white">Have a specific question about your practice?</h3>
               <p className="text-xs sm:text-sm text-slate-400">
@@ -165,10 +165,10 @@ export default function FAQPage() {
             <button
               type="button"
               onClick={() => openConsultation()}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white text-sm font-bold shadow-md shrink-0"
+              className="w-full md:w-auto inline-flex items-center justify-center text-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white text-sm font-bold shadow-md shrink-0"
             >
               <Calendar className="w-4 h-4" />
-              Schedule a Direct Consultation
+              Schedule a Consultation
             </button>
           </div>
 

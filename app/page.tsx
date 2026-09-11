@@ -2,19 +2,18 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustValueStrip } from '@/components/home/TrustValueStrip';
-import { IntroductionSection } from '@/components/home/IntroductionSection';
+import { PracticeRevenueCalculator } from '@/components/home/PracticeRevenueCalculator';
 import { ServicesSection } from '@/components/home/ServicesSection';
-import { WhyChooseUsSection } from '@/components/home/WhyChooseUsSection';
 import { ProcessTimelineSection } from '@/components/home/ProcessTimelineSection';
-import { SpecialtiesSection } from '@/components/home/SpecialtiesSection';
 import { TechnologyDashboardSection } from '@/components/home/TechnologyDashboardSection';
+import { SpecialtiesSection } from '@/components/home/SpecialtiesSection';
 import { SecurityComplianceSection } from '@/components/home/SecurityComplianceSection';
-import { CTASection } from '@/components/home/CTASection';
 import { FAQSection } from '@/components/home/FAQSection';
+import { CTASection } from '@/components/home/CTASection';
 
 export const metadata: Metadata = {
   title: 'UR RCM CONSULTANCY LLC | Medical Billing & Revenue Cycle Management',
-  description: 'UR RCM CONSULTANCY LLC provides professional medical billing and revenue cycle management solutions designed to help healthcare providers streamline operations and improve financial performance.',
+  description: 'UR RCM CONSULTANCY LLC provides professional medical billing, certified coding, and revenue cycle management solutions designed to help healthcare providers streamline operations, overturn denials, and improve financial performance.',
   openGraph: {
     title: 'UR RCM CONSULTANCY LLC | Medical Billing & Revenue Cycle Management',
     description: 'Professional medical billing, coding, and RCM consultancy for healthcare providers. Headquartered in Austin, Texas.',
@@ -24,38 +23,35 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* SECTION 1: HERO */}
+    <div className="w-full flex flex-col min-h-screen overflow-x-hidden">
+      {/* 1. HERO SECTION WITH BENCHMARK CONTROLLER */}
       <HeroSection />
 
-      {/* SECTION 2: TRUST / VALUE STRIP */}
+      {/* 2. EXECUTIVE TRUST & KPI STRIP */}
       <TrustValueStrip />
 
-      {/* SECTION 3: INTRODUCTION */}
-      <IntroductionSection />
+      {/* 3. INTERACTIVE PRACTICE REVENUE & DENIAL CALCULATOR */}
+      <PracticeRevenueCalculator />
 
-      {/* SECTION 4: SERVICES */}
+      {/* 4. INTERACTIVE BENTO GRID SERVICES */}
       <ServicesSection />
 
-      {/* SECTION 5: WHY CHOOSE US */}
-      <WhyChooseUsSection />
-
-      {/* SECTION 6: OUR PROCESS TIMELINE */}
+      {/* 5. 4-PHASE ONBOARDING TIMELINE */}
       <ProcessTimelineSection />
 
-      {/* SECTION 8: TECHNOLOGY / MODERN RCM */}
+      {/* 8. LIVE WORKFLOW TELEMETRY DASHBOARD */}
       <TechnologyDashboardSection />
 
-      {/* SECTION 9: WHO WE SERVE */}
+      {/* 9. CLINICAL SPECIALTIES MATRIX */}
       <SpecialtiesSection />
 
-      {/* SECTION 10: SECURITY & COMPLIANCE */}
+      {/* 10. SECURITY, HIPAA & COMPLIANCE */}
       <SecurityComplianceSection />
 
-      {/* SECTION 11: FAQ */}
+      {/* 11. FREQUENTLY ASKED QUESTIONS */}
       <FAQSection />
 
-      {/* SECTION 12: HIGH CONVERSION DARK CTA */}
+      {/* 12. HIGH-CONVERTING CLOSING CTA */}
       <CTASection />
     </div>
   );

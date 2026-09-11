@@ -95,14 +95,14 @@ export default function SpecialtiesPage() {
               return (
                 <div
                   key={spec.id}
-                  className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-[#0066CC]/50 hover:shadow-md transition-all flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-[#0066CC]/50 hover:shadow-md transition-all flex flex-col justify-between min-w-0 max-w-full"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0066CC] flex items-center justify-center shrink-0">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <h2 className="text-lg font-bold text-slate-900 leading-snug">
                           {spec.name}
                         </h2>
@@ -128,13 +128,14 @@ export default function SpecialtiesPage() {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs text-slate-400">UR RCM Specialty Team</span>
+                    <span className="text-xs text-slate-400">UR RCM Team</span>
                     <button
                       type="button"
                       onClick={() => openConsultation(spec.id)}
                       className="inline-flex items-center gap-1 text-xs font-bold text-[#0066CC] hover:underline"
+                      aria-label={`Inquire for ${spec.name}`}
                     >
-                      Inquire for {spec.name} →
+                      Inquire for Practice →
                     </button>
                   </div>
                 </div>
@@ -143,7 +144,7 @@ export default function SpecialtiesPage() {
           </div>
 
           {/* Bottom Custom Practice Section */}
-          <div className="mt-16 p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-16 p-5 sm:p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-1 text-center md:text-left">
               <h3 className="text-xl font-bold text-white">
                 Operate a Multi-Specialty Clinic or Ambulatory Center?
@@ -155,10 +156,10 @@ export default function SpecialtiesPage() {
             <button
               type="button"
               onClick={() => openConsultation()}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white text-sm font-bold shadow-md shadow-blue-900/40 shrink-0"
+              className="w-full md:w-auto inline-flex items-center justify-center text-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white text-sm font-bold shadow-md shadow-blue-900/40 shrink-0"
             >
               <MessageSquare className="w-4 h-4" />
-              Discuss Your Specialty Requirements
+              Discuss Specialty Requirements
             </button>
           </div>
 

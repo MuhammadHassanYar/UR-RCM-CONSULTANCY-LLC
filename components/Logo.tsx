@@ -31,7 +31,7 @@ export function Logo({
       {/* Dynamic 3D Spherical Mosaic Icon */}
       <svg
         viewBox="0 0 160 160"
-        className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 drop-shadow-sm"
+        className="w-9 h-9 sm:w-11 sm:h-11 shrink-0 drop-shadow-sm"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -110,13 +110,13 @@ export function Logo({
       {variant !== 'icon-only' && (
         <div className="flex flex-col text-left leading-none">
           <span
-            className="font-black tracking-tight text-xl sm:text-2xl"
+            className="font-black tracking-tight text-lg sm:text-2xl"
             style={{ color: textColor }}
           >
             UR RCM
           </span>
           <span
-            className="font-bold text-[9px] sm:text-[10.5px] tracking-[0.38em] uppercase mt-0.5"
+            className="font-bold text-[8.5px] sm:text-[10.5px] tracking-[0.24em] sm:tracking-[0.38em] uppercase mt-0.5"
             style={{ color: subtextColor }}
           >
             CONSULTANCY

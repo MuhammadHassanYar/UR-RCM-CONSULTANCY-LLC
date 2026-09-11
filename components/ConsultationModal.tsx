@@ -49,27 +49,27 @@ export function ConsultationModal({ isOpen, onClose, defaultService = '' }: Cons
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-4 sm:my-8 animate-in fade-in zoom-in-95 duration-200">
         {/* Header Ribbon */}
-        <div className="bg-gradient-to-r from-[#0066CC] to-[#0052A3] px-6 py-5 text-white flex items-center justify-between">
-          <div>
+        <div className="bg-gradient-to-r from-[#0066CC] to-[#0052A3] px-3.5 sm:px-6 py-3.5 sm:py-5 text-white flex items-center justify-between gap-3">
+          <div className="min-w-0 flex-1">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-300">
-              <Shield className="w-3.5 h-3.5" />
-              Confidential & Compliant Practice Assessment
+              <Shield className="w-3.5 h-3.5 shrink-0" />
+              <span>Confidential & Compliant Assessment</span>
             </div>
-            <h2 id="modal-title" className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
+            <h2 id="modal-title" className="text-base sm:text-2xl font-bold tracking-tight text-white mt-1 truncate">
               Schedule an RCM Consultation
             </h2>
           </div>
           <button
             onClick={onClose}
             id="close-consultation-modal-btn"
-            className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors shrink-0"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -77,7 +77,7 @@ export function ConsultationModal({ isOpen, onClose, defaultService = '' }: Cons
         </div>
 
         {/* Content */}
-        <div className="p-6 sm:p-8">
+        <div className="p-3.5 sm:p-8">
           {isSuccess ? (
             <div className="py-6 text-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-emerald-50 text-[#00A859] flex items-center justify-center mx-auto border-2 border-emerald-200 shadow-sm">
@@ -253,11 +253,11 @@ export function ConsultationModal({ isOpen, onClose, defaultService = '' }: Cons
                   <Shield className="w-3.5 h-3.5 text-[#00A859]" />
                   100% Confidential. No obligation.
                 </div>
-                <div className="flex items-center gap-2 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-sm font-medium transition-colors"
+                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-sm font-medium transition-colors"
                   >
                     Cancel
                   </button>
@@ -265,7 +265,7 @@ export function ConsultationModal({ isOpen, onClose, defaultService = '' }: Cons
                     type="submit"
                     id="submit-consultation-form-btn"
                     disabled={isSubmitting}
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-semibold text-sm transition-all shadow-md shadow-blue-500/20 disabled:opacity-70"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-semibold text-sm transition-all shadow-md shadow-blue-500/20 disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>

@@ -102,7 +102,7 @@ export default function WhyChooseUsPage() {
               return (
                 <div
                   key={pillar.title}
-                  className="bg-white p-7 rounded-2xl border border-slate-200 shadow-xs hover:border-[#0066CC]/50 transition-colors flex flex-col justify-between"
+                  className="bg-white p-7 rounded-2xl border border-slate-200 shadow-xs hover:border-[#0066CC]/50 transition-colors flex flex-col justify-between min-w-0 max-w-full"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -123,7 +123,7 @@ export default function WhyChooseUsPage() {
             })}
 
             {/* Austin HQ Highlight */}
-            <div className="bg-slate-900 text-white p-7 rounded-2xl shadow-md flex flex-col justify-between">
+            <div className="bg-slate-900 text-white p-7 rounded-2xl shadow-md flex flex-col justify-between min-w-0 max-w-full">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-white/10 text-emerald-400 flex items-center justify-center mb-4">
                   <Building2 className="w-6 h-6" />
@@ -157,7 +157,8 @@ export default function WhyChooseUsPage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+          {/* Desktop & Tablet Table */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-100/70 text-xs font-bold uppercase tracking-wider text-slate-700">
@@ -190,12 +191,46 @@ export default function WhyChooseUsPage() {
             </table>
           </div>
 
+          {/* Mobile Comparison Cards - 100% Screen Fit with No Side Scrolling */}
+          <div className="md:hidden space-y-4">
+            {comparisonRows.map((row) => (
+              <div
+                key={row.metric}
+                className="p-4 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-3 min-w-0 max-w-full"
+              >
+                <h3 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                  {row.metric}
+                </h3>
+                <div className="space-y-2.5">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                      Traditional Billing Vendor
+                    </div>
+                    <div className="flex items-start gap-2 text-xs text-slate-600 leading-relaxed">
+                      <X className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                      <span className="min-w-0 flex-1">{row.traditional}</span>
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-100 space-y-1">
+                    <div className="text-[10px] font-bold text-[#0066CC] uppercase tracking-wider">
+                      UR RCM Structured Model
+                    </div>
+                    <div className="flex items-start gap-2 text-xs text-slate-900 font-medium leading-relaxed">
+                      <Check className="w-4 h-4 text-[#00A859] shrink-0 mt-0.5" />
+                      <span className="min-w-0 flex-1">{row.urrcm}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* CTA under table */}
           <div className="mt-12 text-center">
             <button
               type="button"
               onClick={() => openConsultation()}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md transition-all text-center"
             >
               <Calendar className="w-4 h-4" />
               Schedule a Practice Evaluation

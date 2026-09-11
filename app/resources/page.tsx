@@ -114,11 +114,11 @@ export default function ResourcesPage() {
           </div>
 
           {/* Practice RCM Assessment Checklist Tool */}
-          <div className="mt-16 bg-slate-50 rounded-3xl p-8 border border-slate-200">
+          <div className="mt-16 bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 min-w-0 max-w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8 space-y-3">
+              <div className="lg:col-span-8 space-y-3 min-w-0 max-w-full">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A859]">Practice Checklist</span>
-                <h3 className="text-2xl font-black text-slate-900">
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900">
                   Are Your Revenue Cycle Fundamentals in Order?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -133,19 +133,19 @@ export default function ResourcesPage() {
                     'Front-desk active eligibility checks 48–72h prior to visit',
                     'Denial root-cause categorization by CARC codes',
                   ].map((check) => (
-                    <div key={check} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+                    <div key={check} className="flex items-center gap-2 text-xs text-slate-700 font-medium min-w-0">
                       <CheckCircle2 className="w-4 h-4 text-[#00A859] shrink-0" />
-                      <span>{check}</span>
+                      <span className="min-w-0 flex-1">{check}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="lg:col-span-4 text-center lg:text-right">
+              <div className="lg:col-span-4 text-center lg:text-right min-w-0 max-w-full">
                 <button
                   type="button"
                   onClick={() => openConsultation()}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md transition-all"
+                  className="w-full lg:w-auto inline-flex items-center justify-center text-center gap-2 px-6 py-3.5 rounded-xl bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold text-sm shadow-md transition-all shrink-0"
                 >
                   Request a Practice Assessment
                 </button>
@@ -161,23 +161,23 @@ export default function ResourcesPage() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200"
         >
-          <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
+          <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-4 sm:p-8 space-y-6 min-w-0 max-w-full">
             
-            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0066CC] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200 gap-2">
+              <div className="flex flex-wrap items-center gap-2 min-w-0 flex-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0066CC] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200 shrink-0">
                   {selectedArticle.category}
                 </span>
-                <span className="text-xs text-slate-400">
+                <span className="text-xs text-slate-400 truncate">
                   {selectedArticle.readTime} · {selectedArticle.date}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedArticle(null)}
-                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors shrink-0"
                 aria-label="Close article"
               >
                 <X className="w-4 h-4" />

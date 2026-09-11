@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
@@ -11,6 +11,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-sans',
   display: 'swap',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title: 'UR RCM CONSULTANCY LLC | Medical Billing & Revenue Cycle Management',
@@ -43,14 +49,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`scroll-smooth ${plusJakartaSans.variable}`}>
-      <body suppressHydrationWarning className="bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 font-sans">
+    <html lang="en" className={`scroll-smooth ${plusJakartaSans.variable} w-full max-w-full overflow-x-hidden`}>
+      <body suppressHydrationWarning className="bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 font-sans w-full max-w-full overflow-x-hidden m-0 p-0 relative">
         <ConsultationProvider>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow w-full max-w-full min-w-0">{children}</main>
             <Footer />
           </div>
         </ConsultationProvider>
@@ -58,5 +68,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-
